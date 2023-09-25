@@ -12,6 +12,11 @@
         path = ./iced;
         description = "for iced applications development";
       };
+
+      c = {
+        path = ./c;
+        description = "basic C development environment";
+      };
     };
   };
 }
