@@ -7,6 +7,11 @@
         path = ./generic-rust;
         description = "generic rust template with most needed things and rust LSP";
       };
+
+      iced = {
+        path = ./iced;
+        description = "for iced applications development";
+      };
     };
   };
 }
