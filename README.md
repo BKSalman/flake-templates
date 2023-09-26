@@ -5,7 +5,7 @@ you can also PR yours if you want :)
 
 
 # Usage
-to use the `generic-rust` template you can use this command:
+to use the `rust` template you can use this command:
 ```bash
-nix flake new -t github:bksalman/flake-templates#generic-rust .
+nix flake new -t github:bksalman/flake-templates#rust .
 ```
