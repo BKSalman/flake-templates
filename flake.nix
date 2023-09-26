@@ -3,9 +3,14 @@
 
   outputs = self: {
     templates = {
-      generic-rust = {
-        path = ./generic-rust;
-        description = "generic rust template with most needed things and rust LSP";
+      rust = {
+        path = ./rust;
+        description = "generic rust template with rustc cargo and rust-analyzer";
+      };
+
+      rust-mold = {
+        path = ./rust-mold;
+        description = "rust template + mold linker";
       };
 
       iced = {

@@ -1,5 +1,5 @@
 {
-  description = "basic rust flake with mold";
+  description = "basic rust development evnvironment";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -13,7 +13,6 @@
       in
     with pkgs; {
       devShells.${system}.default = mkShell {
-          NIX_CFLAGS_LINK = "-fuse-ld=mold";
 
           packages = [
             (rust-bin.stable.latest.default.override {
@@ -23,10 +22,7 @@
           
           nativeBuildInputs = [ ];
           
-          buildInputs = [
-            mold
-            clang
-          ];
+          buildInputs = [ ];
         };
 
       formatter.x86_64-linux = legacyPackages.${system}.nixpkgs-fmt;
