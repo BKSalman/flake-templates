@@ -18,6 +18,11 @@
         description = "for iced applications development";
       };
 
+      egui = {
+        path = ./egui;
+        description = "for egui applications development";
+      };
+
       c = {
         path = ./c;
         description = "basic C development environment";
