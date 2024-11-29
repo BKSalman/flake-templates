@@ -1,6 +1,5 @@
-# this could be improved by removing unnecessary packages
 {
-  description = "basic iced applications development environment";
+  description = "basic rust gui development environment";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -17,19 +16,6 @@
         system = "x86_64-linux";
 
         pkgs = import nixpkgs { inherit system; overlays = [ rust-overlay.overlays.default ]; };
-
-        libPath =  with pkgs; lib.makeLibraryPath [
-          vulkan-loader
-          libGL
-          bzip2
-          fontconfig
-          freetype
-          xorg.libX11
-          xorg.libXcursor
-          xorg.libXrandr
-          xorg.libXi
-          wayland
-        ];
 
         nativeBuildInputs = with pkgs; [
           pkg-config
@@ -56,7 +42,7 @@
           xorg.libX11
         ];
       in with pkgs; {
-        devShell = mkShell {
+        devShells.${system}.default = mkShell {
           inherit buildInputs nativeBuildInputs;
 
           packages = with pkgs; [
@@ -66,7 +52,7 @@
             cargo-watch
           ];
 
-          LD_LIBRARY_PATH = "${libPath}";
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath buildInputs}";
         };
       };
 }

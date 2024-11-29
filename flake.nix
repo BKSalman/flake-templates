@@ -13,14 +13,9 @@
         description = "rust template + mold linker";
       };
 
-      iced = {
-        path = ./iced;
-        description = "for iced applications development";
-      };
-
-      egui = {
-        path = ./egui;
-        description = "for egui applications development";
+      rust-gui = {
+        path = ./rust-gui;
+        description = "for rust gui development";
       };
 
       c = {
